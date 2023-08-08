@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULEITOR</title>
+</head>
+<body>
+<!-- Realiza un programa que sólo permita introducir los caracteres ‘S’ y ‘N’. Si el usuario
+ingresa alguno de esos dos caracteres se deberá de imprimir un mensaje por pantalla
+que diga “CORRECTO”, en caso contrario, se deberá imprimir “INCORRECTO”. -->
+    
+<div>
+    <h1>CALCULEITOR</h1>
+    <input type="number" id="num1" > <span>�</span>
+    <input type="number" id="num2" >
+
+    <select id="op" onchange="calcular()" >
+        <option value="vacio">?</option>
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    
+    <div id="resultado"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html> 
