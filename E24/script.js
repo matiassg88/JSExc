@@ -9,17 +9,32 @@ circulo y lo muestre en el HTML.
 var boton = document.getElementById("boton");
 var area_input = document.getElementById("area");
 var perimetro_input = document.getElementById("perimetro");
-var resultado = 0;
-console.log(area_input.isConnected);
+
+
+boton.onclick=calcuRadio;
 
 function calcuRadio(){
-    if (area_input === 'undefined' ) {
-        resultado=perimetro_input/(2*Math.PI);
-        console.log(resultado);
+    var resultado = 0;
+    var parr_peri;
+    var parr_area;
+
+    if (area_input.value === '' ) {
+        resultado=perimetro_input.value/(2*Math.PI);
+        parr_peri=`el radio es: ${resultado} utilizando el valor del perimetro.`
     }else{
-        let r=area_input/Math.PI;
+        let r=area_input.value/Math.PI;
         resultado=Math.sqrt(r);
+        parr_area=`el radio es: ${resultado} utilizando el valor del area.`
     }
+    var p = document.createElement('p');
+    if (typeof parr_peri !== 'undefined') {
+        p.textContent = parr_peri;
+    } else if (typeof parr_area !== 'undefined') {
+        p.textContent = parr_area;
+    }
+
+    
+    document.body.appendChild(p);
 }
-boton.onclick=calcuRadio;
-console.log(resultado);
+
+
